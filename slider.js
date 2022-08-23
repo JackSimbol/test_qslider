@@ -33,8 +33,7 @@ function get_sum(oid, tid){ //得到除了tid以外的所有选项的值
 }
 
 function set_max(oid, tid){  //控制每个滑动条的最大值
-    get_sum(oid, tid);
-    return 100 - sum;
+    return 100 - get_sum(oid, tid);
 }
 
 /*
