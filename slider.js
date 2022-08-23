@@ -87,7 +87,7 @@ addListener("slider-input1", "weight-input1");
 addListener("slider-input2", "weight-input2");
 addListener("slider-input3", "weight-input3");
 
-var idlist = document.getElementById(testTab1).getAttribute("idlist");
+var idlist = document.getElementById("testTab1").getAttribute("idlist");
 
 document.getElementById("slider-input1").oninput = function(){
     process_slider(idlist,"slider-input1");
