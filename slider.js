@@ -18,10 +18,10 @@ function send(){
 oid: list
 */
 function get_sum(oid, tid){ //得到除了tid以外的所有选项的值
-    int sum = 0;
+    var sum = 0;
     for(var id of oid){
         if(id !== tid){
-            int weight = document.getElementById(id).value;
+            var weight = parseInt(document.getElementById(id).value);
             sum += weight;
         }
     }
@@ -46,7 +46,7 @@ function keep_value(tid, maxval){ //控制滑动条不超过最大值
 }
 
 function auto_selected(oid){ //剩余一项未填时，自动获取该项值
-    int cnt_zero = 0;
+    var cnt_zero = 0;
     var zero_id;
     for(var id of oid){
         if(document.getElementById(id).value == 0){
@@ -60,9 +60,9 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
 }
 
 function check_sum(oid){ //检查总和是否为100
-    int sum = 0;
+    var sum = 0;
     for(id in oid){
-        sum += document.getElementById(id).value;
+        sum += parseInt(document.getElementById(id).value);
     }
     if(sum !== 100){
         return false;
