@@ -40,8 +40,8 @@ function set_max(oid, tid){  //控制每个滑动条的最大值
 tid: textspace id（滑动条左侧显示数据） 
 */
 function keep_value(tid, maxval){ //控制滑动条不超过最大值 
-    if(document.getElementById(tid).innerHTML > maxval){
-        document.getElementById(tid).innerHTML = maxval;
+    if(document.getElementById(tid).value > maxval){
+        document.getElementById(tid).value = maxval;
     }
 }
 
