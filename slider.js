@@ -1,10 +1,10 @@
 function addListener(sid, wid){
     var sliderEl = document.querySelector("#"+sid);
     var selectedEl = document.querySelector("#"+wid);
-    sliderEl.addEventListener("input propertychange", () => { //根据滑块值修改填写值
+    sliderEl.addEventListener("input", () => { //根据滑块值修改填写值
         selectedEl.value = sliderEl.value;
     });
-    selectedEl.addEventListener("input propertychange", () =>{ //根据输入修改滑块值
+    selectedEl.addEventListener("input", () =>{ //根据输入修改滑块值
         sliderEl.value = selectedEl.value;  
     })
 }
