@@ -43,6 +43,8 @@ tid: textspace id（滑动条左侧显示数据）
 function keep_value(tid, maxval){ //控制滑动条不超过最大值 
     if(document.getElementById(tid).value > maxval){
         document.getElementById(tid).value = maxval;
+        var wid = document.getElementById(tid).wid;
+        document.getElementById(wid).value = maxval;
     }
 }
 
