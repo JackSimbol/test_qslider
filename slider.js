@@ -56,7 +56,9 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
         }
     }
     if(cnt_zero == 1){
-        document.getElementById(zero_id).value = set_max(oid, zero_id);
+        var autoval = set_max(oid, zero_id);
+        document.getElementById(zero_id).value = autoval;
+        document.getElementById(document.getElementById(zero_id).wid).value = autoval;
     }
 }
 
