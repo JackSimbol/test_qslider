@@ -43,7 +43,7 @@ tid: textspace id（滑动条左侧显示数据）
 function keep_value(tid, maxval){ //控制滑动条不超过最大值 
     if(document.getElementById(tid).value > maxval){
         document.getElementById(tid).value = maxval;
-        var wid = document.getElementById(tid).wid;
+        var wid = document.getElementById(tid).getAttribute("wid");
         document.getElementById(wid).value = maxval;
     }
 }
@@ -60,7 +60,7 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
     if(cnt_zero == 1){
         var autoval = set_max(oid, zero_id);
         document.getElementById(zero_id).value = autoval;
-        var wid = document.getElementById(zero_id).wid;
+        var wid = document.getElementById(zero_id).getAttribute("wid");
         document.getElementById(wid).value = autoval;
     }
 }
