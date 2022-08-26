@@ -67,7 +67,7 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
 
 function check_sum(oid){ //检查总和是否为100
     var sum = 0;
-    for(id in oid){
+    for(var id of oid){
         sum += parseInt(document.getElementById(id).value);
     }
     if(sum !== 100){
