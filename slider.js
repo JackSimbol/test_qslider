@@ -88,7 +88,7 @@ function check(tid){  //提交前/作答完成后检查
         document.getElementById(lid).style.color = "#f53b57";
         return false;
     }
-    document.getElementById(lid).innerHTML = "";
+    document.getElementById(lid).innerHTML = "OK.";
     document.getElementById(lid).style.color = "#00ff00";
     return true;
 }
