@@ -102,8 +102,15 @@ function process_slider(idlist, tid){
 /*
 idlist: String
 */
-function get_id(idlist){
+function get_id(idlist){ //由idlist转到slider-id构成的数组
     return idlist.split(',');
+}
+
+function reset(tid){ //重设问题值
+    var oid = get_id(idlist);
+    for(var id of oid){
+        document.getElementById(id).value = 0;
+    }
 }
 
 /*
@@ -129,4 +136,8 @@ document.getElementById("slider-input3").oninput = function(){
 
 document.getElementById("check").onclick = function(){
     check("testTab1");
+}
+
+document.getElementById("reset").onclick = function(){
+    reset("testTab1");
 }
