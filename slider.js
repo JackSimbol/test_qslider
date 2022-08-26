@@ -85,9 +85,11 @@ function check(tid){  //提交前/作答完成后检查
     var lid = document.getElementById(tid).getAttribute("logid");
     if(!check_sum(oid)){
         document.getElementById(lid).innerHTML = "Error: sum of weight must be 100.";
+        document.getElementById(lid).style.color = "#f53b57";
         return false;
     }
     document.getElementById(lid).innerHTML = "";
+    document.getElementById(lid).style.color = "#00ff00";
     return true;
 }
 
