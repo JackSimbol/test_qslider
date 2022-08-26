@@ -16,6 +16,12 @@ main {
     align-items: center;
 }
 
+.error {
+    color: #f53b57;
+    height: 30px;
+    border-radius: 4px;
+}
+
 input[type="range"] {
     -webkit-appearance: none;
     background: linear-gradient(75deg, #3c40c6, #575fcf);

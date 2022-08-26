@@ -73,6 +73,21 @@ function check_sum(oid){ //检查总和是否为100
     if(sum !== 100){
         return false;
     }
+    return true;
+}
+
+/*
+tid: 问题id
+lid: slider下方一行显示报错log
+*/
+function check(tid){  //提交前/作答完成后检查
+    var oid = get_id(document.getElementById(tid).getAttribute("idlist"));
+    var lid = document.getElementById(tid).getAttribute("logid");
+    if(!check_sum(oid)){
+        document.getElementById(lid).innerHTML = "Error: sum of weight must be 100.";
+        return false;
+    }
+    return true;
 }
 
 function process_slider(idlist, tid){
@@ -88,6 +103,9 @@ function get_id(idlist){
     return idlist.split(',');
 }
 
+/*
+application on demo
+*/
 addListener("slider-input1", "weight-input1");
 addListener("slider-input2", "weight-input2");
 addListener("slider-input3", "weight-input3");
@@ -104,4 +122,8 @@ document.getElementById("slider-input2").oninput = function(){
 
 document.getElementById("slider-input3").oninput = function(){
     process_slider(idlist,"slider-input3");
+}
+
+document.getElementById("testTab1").onblur = function(){
+    check("testTab1");
 }
