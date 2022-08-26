@@ -87,6 +87,7 @@ function check(tid){  //提交前/作答完成后检查
         document.getElementById(lid).innerHTML = "Error: sum of weight must be 100.";
         return false;
     }
+    document.getElementById(lid).innerHTML = "";
     return true;
 }
 
