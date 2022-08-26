@@ -127,10 +127,6 @@ document.getElementById("slider-input3").oninput = function(){
     process_slider(idlist,"slider-input3");
 }
 
-document.getElementById("testTab1").onblur = function(){
-    check("testTab1");
-}
-
 document.getElementById("check").onclick = function(){
     check("testTab1");
 }
