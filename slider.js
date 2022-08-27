@@ -110,6 +110,8 @@ function reset(tid){ //重设问题值
     var oid = get_id(idlist);
     for(var id of oid){
         document.getElementById(id).value = 0;
+        var wid = document.getElementById(id).getAttribute("wid");
+        document.getElementById(wid).value = 0;
     }
 }
 
