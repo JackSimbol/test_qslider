@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider.css">
+    <title>Document</title>
+</head>
+<body>
+    <table cellspacing="0">
+        <tbody>
+            <tr>
+                <div id="testTab1" idlist="testOpt1,testOpt2,testOpt3" logid="testLog1">
+                    This is a test question.
+                </div>
+            </tr>
+            <tr id="testOpt1" sid="slider-input1" wid="weight-input1" bid="opt_body1">
+                <div id="opt_body1">
+                    A. French Fries
+                </div>
+                <div class="slider">
+                    <input type="number" id="weight-input1" min="0" max="100" value="0">
+                    <input type="range" id="slider-input1" min="0" max="100" value="0" wid="weight-input1">
+                </div>
+            </tr>
+            <tr id="testOpt2" sid="slider-input2" wid="weight-input2" bid="opt_body2">
+                <div id="opt_body2">
+                    B. Cheeseburgers
+                </div>
+                <div class="slider">
+                    <input type="number" id="weight-input2" min="0" max="100" value="0">
+                    <input type="range" id="slider-input2" min="0" max="100" value="0" wid="weight-input2">
+                </div>
+            </tr>
+            <tr id="testOpt3" sid="slider-input3" wid="weight-input3" bid="opt_body3">
+                <div id="opt_body3">
+                    C. Taco    
+                </div>
+                <div class="slider">
+                    <input type="number" id="weight-input3" min="0" max="100" value="0">
+                    <input type="range" id="slider-input3" min="0" max="100" value="0" wid="weight-input3">
+                </div>
+            </tr>
+            <tr>
+                <button id="check" style="float:left">check</button>
+                <div class="error" id="testLog1"></div>
+            </tr>
+            <tr>
+                <button id="reset">reset</button>
+            </tr>
+            <tr>
+                <button id="unparse">unparse</button>
+            </tr>
+        </tbody>
+    </table>
+    <script src="slider.js"></script>
+</body>
+</html>

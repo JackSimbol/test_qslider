@@ -21,6 +21,7 @@ oid: list
 function get_sum(oid, tid){ //得到除了tid以外的所有选项的值
     var sum = 0;
     for(var id of oid){
+        id = document.getElementById(id).getAttribute("sid");
         if(id !== tid){
             var weight = parseInt(document.getElementById(id).value);
             sum += weight;
@@ -52,6 +53,7 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
     var cnt_zero = 0;
     var zero_id;
     for(var id of oid){
+        id = document.getElementById(id).getAttribute("sid");
         if(document.getElementById(id).value == 0){
             cnt_zero += 1;
             zero_id = id;
@@ -68,6 +70,7 @@ function auto_selected(oid){ //剩余一项未填时，自动获取该项值
 function check_sum(oid){ //检查总和是否为100
     var sum = 0;
     for(var id of oid){
+        id = document.getElementById(id).getAttribute("sid");
         sum += parseInt(document.getElementById(id).value);
     }
     if(sum !== 100){
@@ -109,10 +112,24 @@ function get_id(idlist){ //由idlist转到slider-id构成的数组
 function reset(tid){ //重设问题值
     var oid = get_id(idlist);
     for(var id of oid){
+        id = document.getElementById(id).getAttribute("sid");
         document.getElementById(id).value = 0;
         var wid = document.getElementById(id).getAttribute("wid");
         document.getElementById(wid).value = 0;
     }
+}
+
+function unparse_slider(tid){
+    var oid = get_id(document.getElementById(tid).getAttribute("idlist"));
+    var opt_body = "options=";
+    var score = "scores=";
+    for (var id in oid){
+        var body_id = document.getElementById(id).getAttribute("bid");
+        var slider_id = document.getElementById(id).getAttribute("sid");
+        opt_body += "[" + document.getElementById(body_id).innerHTML + "]";
+        score += "[" + document.getElementById(slider_id).value + "]";
+    }
+    return opt_body + "," + score;
 }
 
 /*
@@ -142,4 +159,8 @@ document.getElementById("check").onclick = function(){
 
 document.getElementById("reset").onclick = function(){
     reset("testTab1");
+}
+
+document.getElementById("unparse").onclick = function(){
+    unparse_slider("testTab1");
 }
