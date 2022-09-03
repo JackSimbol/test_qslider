@@ -162,5 +162,5 @@ document.getElementById("reset").onclick = function(){
 }
 
 document.getElementById("unparse").onclick = function(){
-    unparse_slider("testTab1");
+    console.log(unparse_slider("testTab1"));
 }
