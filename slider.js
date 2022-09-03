@@ -123,7 +123,7 @@ function unparse_slider(tid){
     var oid = get_id(document.getElementById(tid).getAttribute("idlist"));
     var opt_body = "options=";
     var score = "scores=";
-    for (var id in oid){
+    for (var id of oid){
         var body_id = document.getElementById(id).getAttribute("bid");
         var slider_id = document.getElementById(id).getAttribute("sid");
         opt_body += "[" + document.getElementById(body_id).innerHTML + "]";
